@@ -5011,12 +5011,12 @@ lb1	ph2	#0	set start of unpacked array
 	lda	upSize	if elements are of the same size then
 	cmp	pkSize
 	bne	lb2
-	ph4	upAddr	  use ~move to move elements
+	ph4	upAddr	  use ~LongMove to move elements
 	ph4	pkAddr
 	ph4	pkEls
 	ph2	#0
 	ph2	pkSize
-	jsl	~Mul2
+	jsl	~Mul4
 	jsl	~LongMove
 	bra	lb4	else
 lb2	lda	pkEls	  while pkEls > 0 do begin
